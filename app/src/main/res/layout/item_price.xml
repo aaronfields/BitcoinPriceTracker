@@ -2,31 +2,56 @@
 <android.support.v7.widget.CardView
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="80dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    android:layout_marginTop="1dp"
+    android:layout_marginBottom="1dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/currency_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"/>
+            android:textSize="24sp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            tools:text="USD"
+            android:textColor="@android:color/holo_blue_light"/>
 
         <TextView
             android:id="@+id/price_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"/>
+            android:textSize="24sp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            tools:text="500.00"
+            android:textColor="@android:color/holo_blue_light"/>
 
         <TextView
             android:id="@+id/currency_symbol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/price_text"/>
+            android:textSize="24sp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@id/price_text"
+            android:layout_centerVertical="true"
+            tools:text="$"
+            android:textColor="@android:color/holo_blue_light"/>
 
     </RelativeLayout>
 
