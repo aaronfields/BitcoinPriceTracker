@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bignerdranch.android.bitcoinpricetracker.PriceActivity">
+    tools:context="com.bignerdranch.android.bitcoinpricetracker.io.bignerdranch.android.bitcoinpricetracker.PriceActivity">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"

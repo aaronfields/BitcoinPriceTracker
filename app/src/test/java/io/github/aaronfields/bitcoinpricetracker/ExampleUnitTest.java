@@ -1,4 +1,4 @@
-package com.bignerdranch.android.bitcoinpricetracker;
+package io.github.aaronfields.bitcoinpricetracker;
 
 import org.junit.Test;
 

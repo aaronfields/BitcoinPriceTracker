@@ -1,4 +1,4 @@
-package com.bignerdranch.android.bitcoinpricetracker;
+package io.github.aaronfields.bitcoinpricetracker;
 
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
