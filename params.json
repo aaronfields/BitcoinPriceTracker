@@ -1,0 +1,6 @@
+{
+  "name": "Bitcoin Price Index",
+  "tagline": "Shows current bitcoin price in multiple currencies",
+  "body": "Bitcoin Price Index uses the Blockchain API to allow the user to view the current price of Bitcoin in multiple currencies at a time.",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
