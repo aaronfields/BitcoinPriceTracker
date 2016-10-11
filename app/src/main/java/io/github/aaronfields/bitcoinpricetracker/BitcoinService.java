@@ -12,5 +12,4 @@ public interface BitcoinService {
 
     @GET("ticker")
     Call<Map<String, Currency>> getAll();
-    //Call<CurrencyResponse> getRate(@Query("rate") String rate);
 }

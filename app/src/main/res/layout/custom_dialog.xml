@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="300dp"
+              android:layout_height="wrap_content"
+              android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/dialog_currency"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Currency"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_light"
+        android:layout_marginBottom="12dp"
+        />
+
+    <TextView
+        android:id="@+id/dialog_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_blue_light"
+        android:text="Currency"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"/>
+
+    <TextView
+        android:id="@+id/dialog_buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_blue_light"
+        android:text="Currency"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="16dp"/>
+
+    <TextView
+        android:id="@+id/dialog_sell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_blue_light"
+        android:text="Currency"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="12sp"
+        android:textColor="@android:color/holo_blue_light"
+        android:text="Source: blockchain.info"
+        android:layout_margin="10dp"/>
+
+
+
+</LinearLayout>

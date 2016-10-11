@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bignerdranch.android.bitcoinpricetracker.io.bignerdranch.android.bitcoinpricetracker.PriceActivity">
+    android:orientation="vertical"
+    tools:context="io.github.aaronfields.bitcoinpricetracker.PriceActivity">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_weight="1">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
@@ -21,13 +22,14 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
-    <!--<TextView-->
-        <!--android:id="@+id/price_text"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:gravity="center"-->
-        <!--android:textSize="50sp"-->
-        <!--tools:text="Bitcoin CurrencyResponse"/>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source: blockchain.info"
+        android:textSize="12sp"
+        android:gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:background="@android:color/holo_blue_light"/>
 
 
-</FrameLayout>
+</LinearLayout>

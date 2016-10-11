@@ -1,5 +1,7 @@
 package io.github.aaronfields.bitcoinpricetracker;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.Pair;
@@ -11,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -81,8 +84,6 @@ public class PriceActivity extends AppCompatActivity {
                 final Map<String, Currency> results = response.body();
                 Log.d("RESULTS123", "onResponse: " + response.body().toString());
 
-                //CurrencyResponse price = results;
-
                 if (response.isSuccessful()) {
                     recyclerView.setAdapter(new PriceAdapter(results));
 
@@ -120,6 +121,7 @@ public class PriceActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(PriceAdapter.PriceViewHolder holder, int position) {
             Pair<String, Currency> currencyPair = this.data.get(position);
+            Singleton.getInstance().setData(this.data);
 
             holder.currency.setText(currencyPair.first.toString());
             holder.symbol.setText(currencyPair.second.getSymbol());
@@ -132,7 +134,7 @@ public class PriceActivity extends AppCompatActivity {
             return data.size();
         }
 
-        class PriceViewHolder extends RecyclerView.ViewHolder {
+        class PriceViewHolder extends RecyclerView.ViewHolder{
             TextView currency;
             TextView symbol;
             TextView price;
@@ -143,9 +145,42 @@ public class PriceActivity extends AppCompatActivity {
                 currency = (TextView) itemView.findViewById(R.id.currency_text);
                 symbol = (TextView) itemView.findViewById(R.id.currency_symbol);
                 price = (TextView) itemView.findViewById(R.id.price_text);
+
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        showDialog(PriceActivity.this);
+                    }
+
+                    public void showDialog(Activity activity) {
+
+                        int position = getAdapterPosition();
+                        List<Pair<String, Currency>> data = Singleton.getInstance().getData();
+                        Pair<String, Currency> currencyPair = data.get(position);
+
+                        final Dialog dialog = new Dialog(activity);
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setCancelable(false);
+                        dialog.setContentView(R.layout.custom_dialog);
+                        dialog.setCanceledOnTouchOutside(true);
+
+                        TextView currency = (TextView) dialog.findViewById(R.id.dialog_currency);
+                        TextView current = (TextView) dialog.findViewById(R.id.dialog_current);
+                        TextView buy = (TextView) dialog.findViewById(R.id.dialog_buy);
+                        TextView sell = (TextView) dialog.findViewById(R.id.dialog_sell);
+
+                        currency.setText(currencyPair.first);
+                        current.setText("Current: " + currencyPair.second.getSymbol() + currencyPair.second.getLast());
+                        buy.setText("Buy: " + currencyPair.second.getSymbol() + currencyPair.second.getBuy());
+                        sell.setText("Sell: " + currencyPair.second.getSymbol() + currencyPair.second.getSell());
+
+                        dialog.show();
+                    }
+                });
             }
+
         }
     }
-
 
 }
